@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import HomeCard from './HomeCard';
-import MeetingModel from './MeetingModel';
+import MeetingModal from './MeetingModal';
 import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk';
 import { useUser } from '@clerk/nextjs';
 import Loader from './Loader';
@@ -100,7 +100,7 @@ const MeetingTypeList = () => {
       />
 
       {!callDetail ? (
-        <MeetingModel
+        <MeetingModal
           isOpen={meetingState === 'isScheduleMeeting'}
           onClose={() => setMeetingState(undefined)}
           title="Create Meeting"
@@ -132,9 +132,9 @@ const MeetingTypeList = () => {
               className="w-full rounded bg-dark-3 p-2 focus:outline-none"
             />
           </div>
-        </MeetingModel>
+        </MeetingModal>
       ) : (
-        <MeetingModel
+        <MeetingModal
           isOpen={meetingState === 'isScheduleMeeting'}
           onClose={() => setMeetingState(undefined)}
           title="Meeting Created"
@@ -149,7 +149,7 @@ const MeetingTypeList = () => {
         />
       )}
 
-      <MeetingModel
+      <MeetingModal
         isOpen={meetingState === 'isJoiningMeeting'}
         onClose={() => setMeetingState(undefined)}
         title="Type the link here"
@@ -162,9 +162,9 @@ const MeetingTypeList = () => {
           onChange={(e) => setValues({ ...values, link: e.target.value })}
           className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
         />
-      </MeetingModel>
+      </MeetingModal>
 
-      <MeetingModel
+      <MeetingModal
         isOpen={meetingState === 'isInstantMeeting'}
         onClose={() => setMeetingState(undefined)}
         title="Start an Instant Meeting"
