@@ -35,4 +35,8 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Note
+
 Deployed App: [video-conferencing-app-clone.vercel.app ](https://video-conferencing-app-clone.vercel.app/)
+
+Learning: [Stream](https://getstream.io/), [Clerk](https://clerk.com/), Next.js
